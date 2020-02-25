@@ -1,5 +1,10 @@
 {:paths ["src" "resources"]
- :deps {org.clojure/clojure {:mvn/version "1.9.0" :scope "provided"}
-        org.clojure/core.async {:mvn/version "0.3.443"}
+ :deps {org.clojure/core.async {:mvn/version "0.4.490"}
         defexample {:mvn/version "1.7.0"}}
- :aliases {:cljs {:extra-deps {org.clojure/clojurescript {:mvn/version "1.9.946"}}}}}
+ :aliases {:dev {:extra-deps {org.clojure/clojurescript {:mvn/version "1.10.439"}
+                              dynadoc {:mvn/version "RELEASE"}
+                              com.bhauman/figwheel-main {:mvn/version "0.2.0"}}
+                 :extra-paths ["dev-resources"]
+                 :main-opts ["dev.clj"]}
+           :prod {:extra-deps {leiningen {:mvn/version "2.9.0"}}
+                  :main-opts ["prod.clj"]}}}
